@@ -54,3 +54,10 @@ public class Test2 {
 //avgMarks > 50   SC
 //avgMarks > 40   PC
 //  			  Not Pass
+
+
+//monthlyIncome  > 100000   Excellent
+//monthlyIncome  > 75000    V Good
+//monthlyIncome  > 50000    Good
+//monthlyIncome  > 25000    OK
+//			  		        Pls try hard

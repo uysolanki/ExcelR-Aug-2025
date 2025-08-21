@@ -2,7 +2,7 @@ package com.excelr.app;
 
 import java.util.Scanner;
 
-public class Test {
+public class Test2 {
 	
 	public static void main(String args[])
 	{
@@ -26,14 +26,27 @@ public class Test {
 		System.out.println("Total Marks "+sumMarks);
 		System.out.println("Average Marks "+avgMarks);
 		
-		if(avgMarks >=40)
+		if(avgMarks >=70)
 		{
-			System.out.println("Pass");
+			System.out.println("DIST");
+		}
+		else if(avgMarks >=60)
+		{
+			System.out.println("FC");
+		}
+		else if(avgMarks >=50)
+		{
+			System.out.println("SC");
+		}
+		else if(avgMarks >=40)
+		{
+			System.out.println("PC");
 		}
 		else
 		{
 			System.out.println("Not Pass");
 		}
+		
 	}
 }
 //avgMarks > 70   DIST

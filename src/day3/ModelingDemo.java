@@ -20,7 +20,7 @@ public class ModelingDemo {
 		System.out.println("Please enter your weight in kg");
 		weight=sc.nextDouble();
 		//  T     &&     T       &&         T
-		// 21<=23      6.3>=6.1        65<=70
+		// 21<=23      6.2>=6.1        75<=70
 		if(age<=23 && height>=6.1 && weight<=70)
 		{
 			System.out.println("Eligible for Modeling");

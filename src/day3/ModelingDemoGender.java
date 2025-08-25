@@ -24,9 +24,9 @@ import java.util.Scanner;
 			System.out.println("Please enter your weight in kg");
 			weight=sc.nextDouble();
 			
-			    //                     T                             ||   F
-				// T     &&     T       &&        T           T
-				// 'm'=='m'     21<=23      6.3>=6.1        65<=70        F
+			    //                     F                             ||   F
+				// F    
+				// 'f'=='m'     21<=23      6.3>=6.1        65<=70        T                F
 			if( (gender=='m'&& age<=23 && height>=6.1 && weight<=70) ||  (gender=='f'&& age<=19 && height>=5.6 && weight<=55))
 			{
 				System.out.println("Eligible for Modeling");

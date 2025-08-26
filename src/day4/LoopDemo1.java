@@ -6,14 +6,14 @@ public class LoopDemo1 {
 		//System.out.println("Alice");			//task
 		
 		int i;
-		
-		i=5;		//initialisation
-		while(i>=1) //condition
+		int sum=0;
+		i=1;		//initialisation
+		while(i<=5) //condition
 		{
-			System.out.println("Alice" + i);
-			i=i-2;    //increment
+			sum=sum+i;
+			i=i+1;    //increment
 		}
-
+		System.out.println("Sum is" + sum);
 	}
 
 }

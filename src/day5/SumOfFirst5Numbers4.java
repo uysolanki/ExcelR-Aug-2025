@@ -10,7 +10,7 @@ public class SumOfFirst5Numbers4 {
 		int sum=0;				//sum will play the role in chocolates in peon's pocket
 		int i;
 		int n;
-		int target=30;
+		int target=50;
 		
 		System.out.println("Please enter strength of class");
 		n=sc.nextInt();
@@ -21,7 +21,7 @@ public class SumOfFirst5Numbers4 {
 			{
 			System.out.println("Rno " + i + " how many chocolates have you bougth?");
 			choc=sc.nextInt();	//15
-			if(choc<10)
+			if( (i%2==1 && choc%5!=0) || (i%2==0 && choc%7!=0) || (choc<10))
 			{
 				continue;
 			}
@@ -30,11 +30,16 @@ public class SumOfFirst5Numbers4 {
 			else
 			{
 				break;
-			}
-			
+			}	
 		}
-		
+		System.out.println("Target Reached");
 		System.out.println("Total chocolates collected "+sum);
+		System.out.println("Extra "+(sum-target));
 	}
 
 }
+//0
+//14
+//29
+//39
+//60

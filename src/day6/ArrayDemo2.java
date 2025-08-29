@@ -16,16 +16,17 @@ public class ArrayDemo2 {
 			arr[i]=sc.nextInt();
 		}
 
-		
+		int max=arr[0];			//max : stone in hand = 18
 		System.out.println(Arrays.toString(arr));
 		int sum=0;
-		for(i=0;i<arr.length;i++)
+		for(i=1;i<arr.length;i++)
 		{
-			if(arr[i]%2==1)
-			sum=sum+arr[i];
+			if(arr[i]>max)
+			{
+			max=arr[i];
+			}
 	      }
-		System.out.println("Sum of Odd Numbers in Array is " +sum);
-
+		System.out.println("Maximum Number in Array is " +max);
 	}
 
 }

@@ -28,5 +28,4 @@ public class ArrayDemo2 {
 	      }
 		System.out.println("Maximum Number in Array is " +max);
 	}
-
 }

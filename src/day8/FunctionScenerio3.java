@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class FunctionScenerio3 {
 
-	public static void main(String[] args)  //Ambani
+	public static void main(String[] args)  //common man
 	{
-		int length;  //mutter
-		int breadth; //paneer
+		int length,breadth;  //mutter paneer
+		
 		
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter Length of Rectangle");
@@ -19,10 +19,10 @@ public class FunctionScenerio3 {
 		System.out.println("Area of Rectangle is"+ans);      //display result --main / serve
 	}
 	
-	public static int areaOfRectangle(int length,int breadth)   //Taj
+	public static int areaOfRectangle(int l,int b)   //Taj
 	{
 		
-		int result=length*breadth;								//formula      --main / cook
+		int result=l*b;								//formula      --main / cook
 		
 		return result;
 	}

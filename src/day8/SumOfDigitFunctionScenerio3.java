@@ -7,7 +7,6 @@ public class SumOfDigitFunctionScenerio3 {
 	
 	public static void main(String[] args)  //Ambani
 	{
-		  
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter a Number");
 		number=sc.nextInt();					//buy

@@ -5,11 +5,13 @@ public class LinearSearchDemo {
 	public static void main(String[] args) {
 		int arr[]= {10,50,20,40,30}; //this data will work for Linear Search bcoz Linear search sorting ins not compulsory
 
-		int search=41;
+		int search=20;
 		int i;
 		int flag=0;		//assume not found
+		int iterationCount=0;
 		for(i=0;i<arr.length;i++ )				//i				arr[i]       search		flag
 		{										//0             10           40			0
+			iterationCount++;
 			if(search==arr[i])					//1				50						0			
 			{									//2				20						0
 				flag=1;	//found					//3				40                      1
@@ -25,6 +27,8 @@ public class LinearSearchDemo {
 		{
 			System.out.println("Not Found");
 		}
+		
+		System.out.println("Iteration Count "+iterationCount);
 	}
 
 }

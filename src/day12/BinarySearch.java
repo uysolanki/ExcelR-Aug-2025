@@ -27,8 +27,7 @@ public static void main(String[] args) {
 			last=mid-1;
 		}
 		
-	}
-	
+	}	
 	if(first>last)
 		System.out.println("NOT FOUND");
 }

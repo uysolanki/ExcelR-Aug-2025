@@ -30,11 +30,11 @@ public static void main(String[] args) {
 	{
 		if(exchangeAmount>0)
 		{
-			notes[i]=exchangeAmount/currency[i];
-			exchangeAmount=exchangeAmount%currency[i];
-		}
-	}
-	int totalNotes=0;
+			notes[i]=exchangeAmount/currency[i];			//i		currency[i]
+			exchangeAmount=exchangeAmount%currency[i];		//0     500
+		}													//1		200
+	}														//2		100
+	int totalNotes=0;										//3     50
 	for(int i=0;i<size;i++)
 	{
 		if(notes[i]!=0)
@@ -42,6 +42,6 @@ public static void main(String[] args) {
 		totalNotes+=notes[i];
 	}
 	
-	
+	System.out.println("Total Notes "+totalNotes);
 }
 }

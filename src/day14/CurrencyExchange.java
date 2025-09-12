@@ -33,7 +33,8 @@ public static void main(String[] args) {
 			notes[i]=exchangeAmount/currency[i];			//i		currency[i]
 			exchangeAmount=exchangeAmount%currency[i];		//0     500
 		}													//1		200
-	}														//2		100
+	}
+															//2		100
 	int totalNotes=0;										//3     50
 	for(int i=0;i<size;i++)
 	{
@@ -41,7 +42,9 @@ public static void main(String[] args) {
 		System.out.println(currency[i] + " x " + notes[i]);
 		totalNotes+=notes[i];
 	}
-	
 	System.out.println("Total Notes "+totalNotes);
+	
+	
+	
 }
 }

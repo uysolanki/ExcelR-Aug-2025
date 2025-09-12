@@ -9,9 +9,6 @@ public class Test
 	static Scanner sc=new Scanner(System.in);
 	public static void main(String[] args) 
 	{
-		
-		
-			
 			
 			int choice;
 			do {
@@ -36,7 +33,7 @@ public class Test
 	}
 
 	private static void display() {
-		if(top==-1)
+		if(isEmpty())
 		{
 			System.out.println("Stack is Empty, Nothing to display");
 		}
@@ -50,7 +47,7 @@ public class Test
 	}
 
 	private static void pop() {
-		if(top==-1)
+		if(isFull())
 		{
 			System.out.println("Stack is Empty");
 		}
@@ -65,7 +62,7 @@ public class Test
 
 	private static void push() {				//top
 												//-1
-		if(top==stack.length-1)
+		if(isFull())
 		{
 			System.out.println("Stack is FULL");
 		}
@@ -78,5 +75,29 @@ public class Test
 		System.out.println(data + "Pushed onto stack");
 		}
 		
+	}
+	
+	private static boolean isFull()
+	{
+		if(top==stack.length-1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	private static boolean isEmpty()
+	{
+		if(top==-1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

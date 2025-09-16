@@ -2,14 +2,13 @@ package day16;
 
 import java.util.Scanner;
 
-public class Test 
+public class StackDemo
 {
 	static int stack[]=new int[5];
 	static int top=-1;
 	static Scanner sc=new Scanner(System.in);
 	public static void main(String[] args) 
-	{
-			
+	{	
 			int choice;
 			do {
 				System.out.println("**** STACK MENU ****");

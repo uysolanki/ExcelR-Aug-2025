@@ -10,18 +10,18 @@ public class PalindromeString {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		
-		System.out.println("Enter a String");
-		input=sc.nextLine().replaceAll("[^A-Za-z]", "").toLowerCase();  //"malayalam"   'm' 'a' 'l' ..
+		System.out.println("Enter a String");  "Mad am"
+		input=sc.nextLine().replaceAll("[^A-Za-z]", "").toLowerCase();  //"madam"      ['m' 'a' 'd' 'a' m]
 		stack=new char[input.length()];
 		
-		for(char ch:input.toCharArray())				//stack			 st	   ch
+		for(char ch:input.toCharArray())				//stack		  ch	 st	   ch		flag=0
 		{
-			push(ch);									//e 4            e	   a
-		}												//l	3 top
-														//p 2
-		int flag=0;										//p 1
-		for(char ch:input.toCharArray())				//a 0
-		{
+			push(ch);									//m 4 top      d     d	   a
+		}												//a	3 
+														//d 2 
+		int flag=0;	 //assume Palindrome true			//a 1 
+		for(char ch:input.toCharArray())				//m 0 
+		{												//	-1 
 			char st=pop();
 			if(st!=ch)
 			{

@@ -34,7 +34,6 @@ public class PalindromeString {
 			System.out.println("Palindrome String");
 		else
 			System.out.println("Not Palindrome String");
-		
 	}
 
 	private static char pop() {

@@ -2,7 +2,7 @@ package day19;
 
 import java.util.Arrays;
 
-public class ArrayCountOfElement {
+public class ArrayCountOfElement2 {
 
 	public static void main(String[] args) {
 
@@ -11,13 +11,7 @@ public class ArrayCountOfElement {
 
 		for (int i = 0; i < arr.length; i++) {							//i		num	 arr[i]		numcounter
 			int num = arr[i];											//0		20	 20			2
-
-			int numCounter = 0;
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[j] == num)
-					numCounter++;
-			}
-
+			
 			int flag = 0;
 			for (int k = 0; k < displayed.length; k++) {
 				if (num == displayed[k]) {
@@ -26,6 +20,17 @@ public class ArrayCountOfElement {
 				}
 
 			}
+			
+			if(flag==1)
+				continue;
+
+			int numCounter = 0;
+			for (int j = 0; j < arr.length; j++) {
+				if (arr[j] == num)
+					numCounter++;
+			}
+
+			
 
 			if (flag == 0)
 				System.out.println(num + " occurs " + numCounter + " times");

@@ -5,7 +5,9 @@ import java.util.Arrays;
 public class AnagramString {
 		public static void main(String[] args) {
 			String str1="note";
-			String str2="apple";
+			String str2="tone";
+			
+			String sentance="note tone onet silent listen";  //collections
 			
 			char array1[]=str1.toCharArray();  //['l','i','s','t','e','n']
 			char array2[]=str2.toCharArray();  //['s','i','l','e','n','t']

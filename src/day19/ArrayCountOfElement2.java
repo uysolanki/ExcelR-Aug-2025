@@ -6,7 +6,7 @@ public class ArrayCountOfElement2 {
 
 	public static void main(String[] args) {
 
-		int arr[] = { 10, 20, 20, 10, 50 }; 
+		int arr[] = { 10, 20, 20, 10, 50,10,10,10,10 }; 
 		int displayed[] = new int[arr.length]; // 10 20 0 0 0
 
 		for (int i = 0; i < arr.length; i++) {							//i		num	 arr[i]		numcounter
@@ -18,7 +18,6 @@ public class ArrayCountOfElement2 {
 					flag = 1;
 					break;
 				}
-
 			}
 			
 			if(flag==1)

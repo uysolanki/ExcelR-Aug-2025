@@ -2,17 +2,15 @@ package day23;
 
 import java.util.Scanner;
 
-public class ArmstrongNumber {
+public class ArmstrongNumber3 {
 public static void main(String[] args) {
+	int arr[]= {1,123,153,370,195};
 	
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter a Number");
-	int number=sc.nextInt();
-	
-	if(checkArmstrong(number))
-	System.out.println(number + " is Armstrong");
-	else
-	System.out.println(number + " is Not Armstrong");
+	for(int number:arr)
+	{
+		if(checkArmstrong(number))
+			System.out.println(number);
+	}
 
 }												
 

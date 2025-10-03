@@ -2,17 +2,14 @@ package day23;
 
 import java.util.Scanner;
 
-public class ArmstrongNumber {
+public class ArmstrongNumber2 {
 public static void main(String[] args) {
 	
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter a Number");
-	int number=sc.nextInt();
-	
-	if(checkArmstrong(number))
-	System.out.println(number + " is Armstrong");
-	else
-	System.out.println(number + " is Not Armstrong");
+	for(int i=1;i<=1000;i++)
+	{
+		if(checkArmstrong(i))
+			System.out.println(i);
+	}
 
 }												
 

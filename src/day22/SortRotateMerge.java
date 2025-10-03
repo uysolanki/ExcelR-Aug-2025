@@ -2,7 +2,7 @@ package day22;
 
 import java.util.Arrays;
 
-public class AppDriver {
+public class SortRotateMerge {
 public static void main(String[] args) {
 	
 	int arr[]= {8,2,3,7,4,9};
@@ -16,7 +16,7 @@ public static void main(String[] args) {
 	rotateLeftMid(arr,mid);
 	System.out.println("After Left Rotation on Mid"+Arrays.toString(arr));
 	
-	int search=13;
+	int search=3;
 //	int index=linearSearch(arr,search);
 //	int index=binarySearch(arr,0,arr.length-1,search);
 	int index=advancedBinarySearch(arr,search);

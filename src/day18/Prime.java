@@ -21,10 +21,14 @@ public class Prime {
 			}
 		}
 		
-		if(counter==2)
-			System.out.println(n + " is Prime Number");
-		else
-			System.out.println(n+ " is not a Prime Number");
+//		if(counter==2)
+//			System.out.println(n + " is Prime Number");
+//		else
+//			System.out.println(n+ " is not a Prime Number");
+//		
+		
+		System.out.println(counter==2 ? n + " is Prime Number" :  n + " is NOT Prime Number");
+	
 		
 		System.out.println("Iteration Count "+loopCounter);
 	}

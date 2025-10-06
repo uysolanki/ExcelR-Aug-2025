@@ -30,8 +30,7 @@ public class PalindromeArray {
 		if(flag==0)
 			System.out.println("Palindrome Array");
 		else
-			System.out.println("Not Palindrome Array");
-											
+			System.out.println("Not Palindrome Array");									
 	}
 
 	private static int pop() {

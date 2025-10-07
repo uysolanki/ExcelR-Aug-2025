@@ -34,8 +34,36 @@ public class Array2DDemo2 {
 			System.out.println("");						
 		}
 
+		int max=0;
+		
+		for(int i=0;i<brr.length;i++)
+		{
+			for(int j=0;j<brr[i].length;j++)
+			{
+				if(brr[i][j]>max)
+				{
+					max=brr[i][j];
+				}
+			}																
+		}
+		
+		System.out.println("Maximum Number from Array is " +max);	
 		
 		
+		
+		
+		for(int i=0;i<brr.length;i++)
+		{
+			int maxRow=0;
+			for(int j=0;j<brr[i].length;j++)
+			{
+				if(brr[i][j]>maxRow)
+				{
+					maxRow=brr[i][j];
+				}
+			}
+			System.out.println("row " + (i+1) + " max number is " +maxRow);
+		}
 
 	}
 

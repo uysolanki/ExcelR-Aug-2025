@@ -11,14 +11,14 @@ public class StringSentance3 {
 		
 		String wordCount[][]=new String[words.length][2];
 		
-		for(int i=0;i<words.length;i++)						//i			wordlength
-		{													//0			2
-			int wordLenght=words[i].length();
+		for(int i=0;i<words.length;i++)						//i		 words[i]	wordlength 
+		{													//0		 my			"2"
+			int wordLenght=words[i].length();				//1      name       4
 			wordCount[i][0]=words[i];
 			wordCount[i][1]=Integer.toString(wordLenght);
 		}
 		
-		for(int i=0;i<words.length;i++)						//i			wordlength
+		for(int i=0;i<words.length;i++)		//no of rows				//i			wordlength
 		{
 				for(int j=0;j<2;j++)
 				{

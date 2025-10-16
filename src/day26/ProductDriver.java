@@ -1,10 +1,8 @@
 package day26;
 
-import java.io.IOException;
-
 public class ProductDriver {
 
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args) 
 	{
 		//classname object = new classname()
 		Product p1=new Product();

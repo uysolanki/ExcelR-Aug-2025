@@ -45,7 +45,7 @@ public class FakeStoreProductsArray {
 //			}											//300
 //		}
 		//System.out.println("Costliet product is of "+ max + " Rs");
-		System.out.println("Costliet product is of " + max + " Rs its title is " +pTitle + " its category is "+pCat);
+		//System.out.println("Costliet product is of " + max + " Rs its title is " +pTitle + " its category is "+pCat);
 	
 		//traditonal for loop
 //		double max=0;									//max		i		cart[i].getPrice()
@@ -76,8 +76,41 @@ public class FakeStoreProductsArray {
 		//System.out.println("Costliet product is of "+ max + " Rs");
 		System.out.println("Costliet product is of " + maxProduct.getPrice() + " Rs its title is " +maxProduct .getTitle() + " its category is "+maxProduct .getCategory());
 	
-	
+		
+		double sumPrice=0;
+		
+		
+		for(Product product:cart)
+		{
+			sumPrice+=product.getPrice();
+		}
+		
+		double avgPrice=sumPrice / cart.length;
+		
+		System.out.println("Average Product Price "+avgPrice);
+		Product temp=null;
+		for(int i=0;i<cart.length;i++)
+		{
+			for(int j=i+1; j<cart.length; j++)
+			{
+					if(cart[i].getPrice() > cart[j].getPrice())
+					{
+						temp=cart[i];
+						cart[i]=cart[j];
+						cart[j]=temp;
+					}
+			}
+		}
+		
+		System.out.println("After Sorting in Ascending order on Price");
+		
+		for(int i=0;i<cart.length;i++)
+		{
+			cart[i].displayProduct();
+		}
 	}
 
+	
 }
 //Costliet product is of 300.0 Rs its title is Laptop its category is Electronics
+//Sorting the array based on price in asc order

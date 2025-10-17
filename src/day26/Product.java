@@ -6,11 +6,12 @@ import java.io.InputStreamReader;
 
 public class Product {
 
-		private int id;						//data members   also known as property
+		private int id;						//data members also known as property
 		private String title;
 		private String description;
 		private double price;
 		private String category;
+		
 		
 		
 		public int getId() {
@@ -74,11 +75,11 @@ public class Product {
 		
 		public void displayProduct()
 		{
-			System.out.println("Product ID is : " + this.id);
-			System.out.println("Product Title is : " + this.title);
-			System.out.println("Product Description is : " + this.description);
-			System.out.println("Product Price is : " + this.price);
-			System.out.println("Product Category is : " + this.category);
+			System.out.print("ID : " + this.id);
+			System.out.print(" Title : " + this.title);
+			System.out.print(" Desc : " + this.description);
+			System.out.print(" Price : " + this.price);
+			System.out.println(" Category : " + this.category);
 		}
 
 		public boolean search(int searchId) {		//searchID=298    this.id=200

@@ -108,6 +108,27 @@ public class FakeStoreProductsArray {
 		{
 			cart[i].displayProduct();
 		}
+		
+		
+		for(int i=0;i<cart.length;i++)
+		{
+			for(int j=i+1; j<cart.length; j++)
+			{
+					if(cart[i].getTitle().compareTo(cart[j].getTitle())>0)
+					{
+						temp=cart[i];
+						cart[i]=cart[j];
+						cart[j]=temp;
+					}
+			}
+		}
+		
+System.out.println("After Sorting in Ascending order on Product Title");
+		
+		for(int i=0;i<cart.length;i++)
+		{
+			cart[i].displayProduct();
+		}
 	}
 
 	

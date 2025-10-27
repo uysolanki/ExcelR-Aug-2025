@@ -130,8 +130,6 @@ System.out.println("After Sorting in Ascending order on Product Title");
 			cart[i].displayProduct();
 		}
 	}
-
-	
 }
 //Costliet product is of 300.0 Rs its title is Laptop its category is Electronics
 //Sorting the array based on price in asc order

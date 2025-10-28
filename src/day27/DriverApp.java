@@ -7,7 +7,6 @@ public class DriverApp {
 //	person.acceptPerson();
 //	person.displayPerson();
 
-	
 	Employee employee1=new Employee();
 	employee1.acceptPerson();
 	employee1.acceptEmployee();

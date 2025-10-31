@@ -33,7 +33,5 @@ public class WaterHeight {
 		}
 		
 		return maxArea;
-	
 	}
-
 }

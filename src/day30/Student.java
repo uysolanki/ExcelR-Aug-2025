@@ -35,6 +35,13 @@ public class Student {
 		this.per=c;
 	}
 	
+	public Student(Student temp)  //Parameterised Constructor or Copy Constructor
+	{
+		this.rno=temp.rno;
+		this.sname=temp.sname;
+		this.per=temp.per;
+	}
+	
 	public void displayStudent()   //
 	{
 		System.out.println("Student Roll No is "+ rno);

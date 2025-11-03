@@ -21,5 +21,4 @@ public class DriverApp {
 	Employee employee2=new Employee(333444L,"Shyam",21,102,"Programmer",1800);
 	employee2.displayEmployee();
 	}
-
 }

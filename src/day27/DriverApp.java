@@ -7,12 +7,19 @@ public class DriverApp {
 //	person.acceptPerson();
 //	person.displayPerson();
 
-	Employee employee1=new Employee();
-	employee1.acceptPerson();
-	employee1.acceptEmployee();
+//	Employee employee1=new Employee();
+//	employee1.acceptPerson();
+//	employee1.acceptEmployee();
+//	
+//	employee1.displayPerson();
+//	employee1.displayEmployee();
+//	
 	
-	employee1.displayPerson();
+	Employee employee1=new Employee();
 	employee1.displayEmployee();
+	System.out.println("----------------------");
+	Employee employee2=new Employee(333444L,"Shyam",21,102,"Programmer",1800);
+	employee2.displayEmployee();
 	}
 
 }

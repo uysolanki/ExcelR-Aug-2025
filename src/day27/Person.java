@@ -8,6 +8,20 @@ public class Person {
 	protected String name;
 	protected int age;
 	
+	public Person()
+	{
+		this.adharNo=111222;
+		this.name="Raj";
+		this.age=18;
+	}
+	
+	public Person(long a,String b,int c)
+	{
+		this.adharNo=a;
+		this.name=b;
+		this.age=c;
+	}
+	
 	public void acceptPerson()			//total Methods  = 2
 	{
 		Scanner sc=new Scanner(System.in);

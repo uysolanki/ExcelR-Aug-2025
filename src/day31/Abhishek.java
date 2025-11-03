@@ -1,8 +1,9 @@
 package day31;
 
 public class Abhishek extends Amitabh
-{
 
+{
+	public String qualification="BCOM";
 	@Override
 	public void car()
 	{

@@ -9,4 +9,6 @@ public class Abhishek extends Amitabh
 	{
 		System.out.println("Mercedes");
 	}
+	
+	
 }

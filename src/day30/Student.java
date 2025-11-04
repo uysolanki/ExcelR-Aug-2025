@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Student {
 	
-	private int rno;
+	int rno;
 	private String sname;
 	private double per;
 	

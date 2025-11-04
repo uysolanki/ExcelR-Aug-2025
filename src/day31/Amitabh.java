@@ -1,17 +1,18 @@
 package day31;
 
 public class Amitabh {
-	
-	public String qualification="MCOM";
-public void home()
-{
-	System.out.println("Jalsa");
-}
 
+	public String qualification = "MCOM";
 
-public void car()
-{
-	System.out.println("BMW");
-}
+	public void home() {
+		System.out.println("Jalsa");
+	}
 
+	public void car() {
+		System.out.println("BMW");
+	}
+
+	final public void gold() {
+		System.out.println("Family GOLD");
+	}
 }

@@ -15,6 +15,8 @@ public class WholesalerDriverApp {
 			System.out.println("Order Accepted");
 		else
 			throw new LowQuantityException("Please enter quantity > 500");
+			//to explicilty throw an exception
+			//it is used mostly with custom / user defined exception
 		}
 		catch(LowQuantityException e1)
 		{

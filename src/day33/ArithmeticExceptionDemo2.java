@@ -28,8 +28,10 @@ public class ArithmeticExceptionDemo2 {
 			System.out.println("Please enter valid Integer Value");
 		}
 		
-		
+		finally
+		{
 		System.out.println("Hiii");
+		}
 
 	}
 

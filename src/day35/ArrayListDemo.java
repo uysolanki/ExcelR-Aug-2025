@@ -2,6 +2,7 @@ package day35;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayListDemo {
 
@@ -52,7 +53,7 @@ public class ArrayListDemo {
 			System.out.println(a2);
 			
 			
-			ArrayList<String> a3=new ArrayList(Arrays.asList("Alice","Ben","Chris","David","Chris"));
+			List<String> a3=new ArrayList(Arrays.asList("Alice","Ben","Chris","David","Chris"));
 			System.out.println(a3);
 			
 			
@@ -60,6 +61,8 @@ public class ArrayListDemo {
 				System.out.println("Found");
 				else
 				System.out.println("Not Found");
+				
+				
 	}
 	
 	

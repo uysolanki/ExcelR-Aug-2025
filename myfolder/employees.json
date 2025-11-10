@@ -30,7 +30,7 @@
     "address": {
       "street": "Victor Plains",
       "suite": "Suite 879",
-      "city": "Wisokyburgh",
+      "city": "Pune",
       "zipcode": "90566-7771",
       "geo": {
         "lat": "-43.9509",
@@ -76,7 +76,7 @@
     "address": {
       "street": "Hoeger Mall",
       "suite": "Apt. 692",
-      "city": "South Elvis",
+      "city": "Pune",
       "zipcode": "53919-4257",
       "geo": {
         "lat": "29.4572",
@@ -145,7 +145,7 @@
     "address": {
       "street": "Rex Trail",
       "suite": "Suite 280",
-      "city": "Howemouth",
+      "city": "Delhi",
       "zipcode": "58804-1099",
       "geo": {
         "lat": "24.8918",

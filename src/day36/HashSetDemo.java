@@ -73,7 +73,6 @@ public class HashSetDemo {
 		fyStudentsexamSeat.add(s2);
 		fyStudentsexamSeat.add(s3);
 		
-		System.out.println( fyStudentsexamSeat);
 		
 		
 		

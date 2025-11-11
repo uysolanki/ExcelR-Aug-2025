@@ -16,7 +16,7 @@ public class ArrayListDemo {
 		a1.add(40);
 		a1.add(50);
 		
-		System.out.println(a1);
+		System.out.println(a1.get(0));
 		
 		int sum=0;	//sum 0 ,10 ,30, 60 ,100,150
 		for(int i=0;i<a1.size();i++)

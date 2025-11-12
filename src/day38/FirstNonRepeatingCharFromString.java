@@ -32,7 +32,7 @@ public class FirstNonRepeatingCharFromString {
 		System.out.println(hashmap);
 
 		for (char ch : name.toCharArray()) // ch
-		{ // m
+		{ 
 			if (hashmap.get(ch) == 1)
 				return ch;
 		}

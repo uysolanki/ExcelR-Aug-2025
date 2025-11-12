@@ -20,7 +20,6 @@ public class HashMapDemo4 {
 		
 		System.out.println(counter);
 	}
-
 }
 
 

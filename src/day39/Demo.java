@@ -1,5 +1,5 @@
 package day39;
 
 public interface Demo {
-	public void greet();
+	public String greet(String userName,String cityName);
 }

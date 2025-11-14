@@ -38,7 +38,6 @@ public class GroupWordsByAnagrams {
 		{
 			result.add(entry.getValue());
 		}
-		
 		return result;
 	}
 

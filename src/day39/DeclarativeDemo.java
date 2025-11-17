@@ -17,15 +17,20 @@ public class DeclarativeDemo {
 		List<Integer> squareNumbers=numbers.stream().map((num)->num*num).toList();
 		
 
-		numbers.stream().forEach((num)->System.out.println(num));
-		
+		numbers.stream().forEach((num)->System.out.println(num));		
 		
 		List<Integer> numbers1=new ArrayList(Arrays.asList(20,23,13,14,25));
 		int sumAge=numbers1.stream().filter((num)->num>=18).map((num)->num+2).reduce((num,acc)->num+acc).get();
 		System.out.println(sumAge);
 		
+		numbers.stream().map((num)->num*num).forEach(DeclarativeDemo::displayNumber);
+		
 	}
-
+	
+	public static void displayNumber(int number)
+	{
+		System.out.println(number);
+	}
 }
 
 

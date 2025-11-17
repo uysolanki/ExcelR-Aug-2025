@@ -1,7 +1,6 @@
 package day39;
 
 public class DriverApp {
-
 	public static void main(String[] args) {
 //	CrikcetTurf cricket=new CrikcetTurf();
 //	System.out.println(cricket.getPrice());
@@ -11,7 +10,8 @@ public class DriverApp {
 //	Sample sample=new GoodMorning();
 //	sample.greet();
 
-//	Demo demo1=  ()->System.out.println("Welcome Alice to Pune you will get FSD certificate");
+	Test test1=  ()->System.out.println("Welcome Alice to Pune you will get FSD certificate");
+	test1.test();
 //	Demo demo2=  ()->System.out.println("Welcome Ben to Delhi you will get Cloud certificate");
 
 //	Demo demo3=  (name)->System.out.println("Welcome "+name+ " to Delhi you will get Cloud certificate");	
@@ -30,15 +30,14 @@ public class DriverApp {
 //		String course=demo6.greet("Frank", "London");
 //		System.out.println(course);
 
-		Demo demo6 = (name, city) -> {
-			System.out.println("Welcome " + name + " to " + city);
-			return "DB Architech";
-		};
+//		Demo demo6 = (name, city) -> {
+//			System.out.println("Welcome " + name + " to " + city);
+//			return "DB Architech";
+//		};
+//
+//		String course = demo6.greet("Frank", "London");
+//		System.out.println("you will get " + course + " certificate ");
 
-		String course = demo6.greet("Frank", "London");
-		System.out.println("you will get " + course + " certificate ");
-
-		
 	}
 
 }

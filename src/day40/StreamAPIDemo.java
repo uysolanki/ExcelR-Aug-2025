@@ -14,17 +14,17 @@ public class StreamAPIDemo {
 //		numbers.stream().map((num)->num*num).forEach(System.out::println);
 //		numbers.stream().filter((num)-> num%2==1).forEach((number)->System.out.println(number));
 		
-		numbers.stream().map((num)->num*num).forEach(StreamAPIDemo::displayNumber);
+//		numbers.stream().map((num)->num*num).forEach(StreamAPIDemo::displayNumber);
 //		
 //		System.out.println("****");
-//		numbers.stream().filter((num)-> num%2==1).forEach((number)->System.out.println(number));
+		numbers.stream().filter((num)-> num%2==1).forEach((number)->System.out.println(number));
 //		
 //		numbers.stream().filter(StreamAPIDemo::checkOdd).forEach((number)->System.out.println(number));
 //		
-//		numbers.stream().filter(StreamAPIDemo::checkOdd).forEach(StreamAPIDemo::displayNumber);
+		numbers.stream().filter(StreamAPIDemo::checkOdd).forEach(StreamAPIDemo::displayNumber);
 //		
 //		numbers.stream().filter((num)-> num%2==1).forEach(System.out::print);
-//		
+		
 	}
 	
 	public static void displayNumber(int number)
@@ -38,6 +38,11 @@ public class StreamAPIDemo {
 			return true;
 		else
 			return false;
+	}
+	
+	public static boolean checkOdd1(int number)
+	{
+		return number%2==1;
 	}
 
 }

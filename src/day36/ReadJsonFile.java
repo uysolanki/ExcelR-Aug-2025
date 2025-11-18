@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -29,12 +30,15 @@ public class ReadJsonFile {
 		
 		for(Employee employee : employees)
 		{
-			if(employee.getAddress().getCity().equals("Delhi"))
-				System.out.println(employee);
+			System.out.println(employee);
 		}
+		System.out.println("---");
+		List<Employee> MrsEemployees=employees.stream().filter(emp->emp.getName().contains("Mrs")).collect(Collectors.toList());
+		System.out.println(MrsEemployees);
 		
-		
-
+		System.out.println("---");
+		List<Employee> jasperEemployees=employees.stream().filter(emp->emp.getEmail().endsWith("jasper.info")).collect(Collectors.toList());
+		System.out.println(jasperEemployees);
 	}
 
 }

@@ -1,0 +1,218 @@
+Lambda expression is an anonymous function with
+no access modifiers
+no return type
+no name
+
+has one special symbol -> arrow
+adv : used to write concise code
+
+lambda expression is aka as closures
+
+
+Use Case 1 :  no parameterised function 
+public void greet()
+{
+Sop("Welcome");
+}
+
+()->
+{
+Sop("Welcome");
+};
+
+
+()->{Sop("Welcome");}   
+()->Sop("Welcome");       as function body contains single line we can skip the {}  
+
+
+Use Case 2a :  parameterised function (single parameter)
+
+public double add(int radius)
+{
+Sop(3.14*radius*radius);
+}
+
+
+(radius)->
+{
+return 3.14*radius*radius;
+}
+
+if we have single formal parameter then we can skip the () also
+
+radius->
+{
+return 3.14*radius*radius;
+}
+
+//NOTE : If we are writing the {} then if we wish to return any value then we have to explicitly mention the return keyword
+
+if we have single line function body then we can skip the {} + return keyword also
+
+radius-> 3.14*radius*radius;       
+//NOTE : here. as we have not put the parenthesis for the function body by default whatever we write will be returnedno need to explicitly mention the return keyword
+
+Use Case 2b :  parameterised function (multiple parameter)
+public void add(int x,int y)
+{
+Sop(x+y);
+}
+
+
+(int x,int y)->
+{
+Sop(x+y);
+}
+
+no need to give datatype for formal parameters
+
+(x,y)->
+{
+Sop(x+y);
+}
+
+
+Use Case 3 :  function return
+public int add(int x,int y)
+{
+return(x+y);
+}
+
+(x,y)->
+{
+return(x+y);
+}
+
+
+(x,y)->(x+y);
+
+---
+
+interface Animal
+{
+void eat();
+}
+
+class Cat implements Animal
+{
+void eat()
+{
+Sop("Cat eating");
+}
+}
+
+class Driver
+{
+psvm(..)
+{
+Animal animal=new Cat();
+animal.eat();
+}
+}
+total 20 lines of code
+--------
+
+
+using Lambda Expr
+psvm(..)
+{
+Animal animal=()->Sop("Cat eating using Lambda Expression");
+animal.eat();
+animal.eat();
+animal.eat();
+animal.eat();
+}
+
+-----------
+
+interface Arithmatic
+{
+void add(int x,int y);
+}
+
+class Calculator implements Arithmatic
+{
+void add(int x,int y)
+{
+Sop(x+y);
+}
+}
+
+class Driver
+{
+psvm(..)
+{
+Arithmatic arithmatic=new Calculator();
+arithmatic.add(10,20);
+}
+}
+
+
+class Driver
+{
+psvm(..)
+{
+Arithmatic arithmatic=(x,y)->Sop(x+y);
+arithmatic.add(10,20);
+}
+}
+
+
+-----
+
+interface Arithmatic
+{
+void add(int x,int y);
+
+default void m1()
+{
+Sop("hi");
+}
+
+static void m2()
+{
+Sop("bye");
+}
+}
+
+class Calculator implements Arithmatic
+{
+void add(int x,int y)
+{
+Sop(x+y);
+}
+}
+
+class Driver
+{
+psvm(..)
+{
+Arithmatic arithmatic=new Calculator();
+arithmatic.add(10,20);
+arithmatic.m1();
+Arithmatic.m2();
+}
+}
+
+-------
+in multithreading
+
+class Driver
+{
+psvm(..)
+{
+Runable runnable=()->{
+						for(int i=1;i<=26;i++)
+						{
+						Sop(i+ "\t");
+						}
+					};
+					
+	Thread thread = new Thread(runnable); // wrap Runnable in Thread
+    thread.start(); // start the thread
+}
+}
+
+
+
+

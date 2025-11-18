@@ -3,6 +3,8 @@ package day36;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +41,20 @@ public class ReadJsonFile {
 		System.out.println("---");
 		List<Employee> jasperEemployees=employees.stream().filter(emp->emp.getEmail().endsWith("jasper.info")).collect(Collectors.toList());
 		System.out.println(jasperEemployees);
+		
+//		ZoneId zone = ZoneId.of("Australia/Sydney");
+//		ZonedDateTime zdt = ZonedDateTime.now(zone);
+//
+//		System.out.println(zdt);
+//		
+		
+		//Convert from one zone to another:
+			ZonedDateTime usa = ZonedDateTime.now(ZoneId.of("America/New_York"));
+			System.out.println(usa);
+			ZonedDateTime syd = usa.withZoneSameInstant(ZoneId.of("Australia/Sydney"));
+			
+			System.out.println(syd);
+			
 	}
 
 }

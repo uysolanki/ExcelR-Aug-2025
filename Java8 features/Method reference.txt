@@ -1,0 +1,104 @@
+Method Referencing
+
+
+List<Integer> doubleNumbers1=numbers.stream().filter(number->number%2==0).collect(Collectors.toList());
+	System.out.println(doubleNumbers1);
+
+
+we can write "number->number%2==0" into a function and refer that method instead
+
+//normal function call using lambda expression
+List<Integer> doubleNumbers1=numbers.stream().filter(number->isEven(number)).collect(Collectors.toList());
+
+//using method referencing
+
+numbers.stream().filter(Example1::isEven).forEach(Example1::displayNumber);
+numbers.stream().filter((num)-> num%2==1).forEach(System.out::print);
+
+class Example1
+{
+private static boolean isEven(int no)
+{
+	return no%2==0;
+}
+
+public static void displayNumber(int number)
+	{
+		System.out.println(number);
+	}
+	
+}
+
+-----------------------
+
+products.stream()
+        .forEach(ProductUtils::showProductDetails);
+		
+class ProductUtils
+{
+public static void showProductDetails(Product p) {
+    System.out.println("----- Product Details -----");
+    System.out.println("Name: " + p.getName());
+    System.out.println("Price: " + p.getPrice());
+    System.out.println("Category: " + p.getCategory());
+    System.out.println("Available: " + (p.isAvailable() ? "Yes" : "No"));
+    System.out.println("---------------------------");
+}
+}
+
+
+but as we add extra logic lambda expression gets a bit messy
+
+products.stream()
+        .forEach(p -> {
+            System.out.println("----- Product Details -----");
+            System.out.println("Name: " + p.getName());
+            System.out.println("Price: " + p.getPrice());
+            System.out.println("Category: " + p.getCategory());
+            System.out.println("Available: " + (p.isAvailable() ? "Yes" : "No"));
+
+            // Additional large logic
+            if (p.getPrice() > 5000) {
+                System.out.println("This is a premium product.");
+            }
+
+            if (p.getCategory().equals("Electronics")) {
+                System.out.println("Warranty: 1 year included.");
+            }
+
+            System.out.println("Stock: " + p.getStockCount() + " units");
+            System.out.println("---------------------------");
+        });
+		
+same logic using method referencing
+
+products.stream()
+        .forEach(ProductUtils::showProductDetails);
+	
+
+class ProductUtils
+{
+public static void showProductDetails(Product p) {
+    System.out.println("----- Product Details -----");
+    System.out.println("Name: " + p.getName());
+    System.out.println("Price: " + p.getPrice());
+    System.out.println("Category: " + p.getCategory());
+    System.out.println("Available: " + (p.isAvailable() ? "Yes" : "No"));
+
+    if (p.getPrice() > 5000) {
+        System.out.println("This is a premium product.");
+    }
+
+    if (p.getCategory().equals("Electronics")) {
+        System.out.println("Warranty: 1 year included.");
+    }
+
+    System.out.println("Stock: " + p.getStockCount() + " units");
+    System.out.println("---------------------------");
+}
+}
+
+Advantage:
+1. Cleaner & Shorter Code
+2. Avoids Rewriting Parameter Lists
+3. if you refactor or rename methods, it updates the method referencing implicitly

@@ -1,0 +1,11 @@
+List<List<String>> nested = List.of(
+    List.of("A", "B"),
+    List.of("C", "D")
+);
+
+[[a,b][c,d]]
+List<String> flat = nested.stream()
+    .flatMap(list -> list.stream())
+    .collect(Collectors.toList());
+
+System.out.println(flat); // [A, B, C, D]

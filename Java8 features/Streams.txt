@@ -1,0 +1,2 @@
+Stream is a wrapper on top of the Collection Object datasource 
+Stream will not disturb the actual datasource object

@@ -1,0 +1,44 @@
+
+create table employee(
+eno int(5) primary key auto_increment,
+ename varchar(10) not null,
+salary int(5) check(salary>=100),
+gender varchar(1) check(gender in('m','f')),
+dept varchar(10) default 'IT',
+city varchar(10) default 'Pune',
+workmode varchar(10) check(workmode in('wfo','wfh','hybrid')),
+passport varchar(10) unique);
+
+single row:
+insert into employee(ename,salary,gender,dept,city,workmode,passport) 
+values('Alice',800,'f','Sales','Delhi','wfh','A123456');
+
+multiple row:
+insert into employee(ename,salary,gender,dept,city,workmode,passport) 
+values
+('Roshan',1800,'m','Finance','Delhi','wfh','R123456'),
+('Yogesh',1900,'m','Marketing','Mumbai','wfo','Y123456'),
+('Sanika',2000,'f','IT','Pune','wfh','S123456'),('Mayuri',210,'f','HR','Mumbai','wfo','M123456'),
+('Isha',2200,'f','Sales','Pune','wfh','I123456');
+
+q1) display details of employee working in Delhi
+SELECT *
+from employee
+where city in('Delhi');
+
+q) display names of employee working in Pune or Mumbai
+SELECT ename
+FROM employee
+WHERE city = 'Pune'
+OR city = 'Mumbai'
+
+SELECT ename
+FROM employee
+WHERE city in('Pune','Mumbai');
+
+q) display names of female employee working in Delhi
+SELECT ename
+FROM employee
+WHERE city = 'Delhi'
+AND
+gender = 'f'

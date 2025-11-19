@@ -69,3 +69,12 @@ q) display city wise avg salary
 SELECT city, avg( salary ) as 'Average Salary'
 FROM employee
 GROUP BY city
+
+q)display name of emp earning max salary
+select ename
+from employee
+where salary=(select max(salary) from employee);
+
+
+q) display names of emps whose sal is > than
+the avg sal of females working in pune

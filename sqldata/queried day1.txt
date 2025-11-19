@@ -42,3 +42,30 @@ FROM employee
 WHERE city = 'Delhi'
 AND
 gender = 'f'
+
+q) display gender wise count of employee
+select gender,count(*)
+from employee
+group by gender
+
+q) display city wise count of employee
+select gender,count(*)
+from employee
+group by gender 
+
+q) display city wise count of employee where more than 2 emps are working
+SELECT city, count( * )
+FROM employee
+GROUP BY city
+having count(*)>2;
+
+q) display gender wise max salary
+SELECT gender, max( salary )
+FROM employee
+GROUP BY gender
+
+
+q) display city wise avg salary
+SELECT city, avg( salary ) as 'Average Salary'
+FROM employee
+GROUP BY city

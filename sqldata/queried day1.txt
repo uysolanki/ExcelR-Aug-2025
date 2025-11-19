@@ -78,3 +78,136 @@ where salary=(select max(salary) from employee);
 
 q) display names of emps whose sal is > than
 the avg sal of females working in pune
+
+
+relationships
+1:1
+
+create table chiefminister(
+cmno int(5) primary key,
+cmname varchar(10) not null,
+cmage int(3) check(cmage>=40));
+
+
+create table state(
+sno int(5) primary key,
+sname varchar(10) not null,
+capital varchar(10),
+cmno int(5) unique,
+foreign key(cmno) references chiefminister(cmno));
+
+
+insert into chiefminister
+values
+(1,       'Fadnavis',     55),
+(2,       'Sharma',       60),
+(3,       'Patel',        50 );
+
+
+insert into state
+values
+(1,       'Maharasht',     'Mumbai', 1),
+(2,       'Rajasthan',     'Jaipur', 2),
+(3,       'Gujarat',       'Ahmedabad', 3 );
+
+
+select cmname as 'Chief Minister'     --using column alias
+from state,chiefminister
+where
+state.cmno=chiefminister.cmno
+and
+sname = 'Gujarat';
+
+
+using
+inner join (default )
+
+select cmname
+from chiefminister 
+join
+state 
+on chiefminister.cmno=state.cmno
+where
+sname = 'Gujarat';
+
+
+phase 1 : 
+SELECT *
+FROM chiefminister
+JOIN state ON chiefminister.cmno = state.cmno;
+
+horizontal trimming 
+SELECT *
+FROM chiefminister
+JOIN state ON chiefminister.cmno = state.cmno
+WHERE cmage >=52
+
+vertical trimming
+SELECT cmname
+FROM chiefminister
+JOIN state 
+ON chiefminister.cmno = state.cmno
+WHERE cmage >=52
+
+or using table alias
+
+SELECT cmname
+FROM chiefminister cm
+JOIN state s
+ON cm.cmno = s.cmno
+WHERE cmage >=52;
+
+
+vertical trimming
+SELECT cmname
+FROM chiefminister
+JOIN state 
+using cmno
+WHERE cmage >=52
+
+
+1 : M
+
+create table dept(
+dno int(5) primary key,
+dname varchar(10) not null,
+city varchar(10));
+
+
+create table emp(
+eno int(5) primary key,
+ename varchar(10) not null,
+sal int(5),
+dno int(5),
+foreign key(dno) references dept(dno));
+
+insert into dept
+values
+(1,       'IT',     'Pune'),
+(2,       'Sales',      'Delhi'),
+(3,       'HR',       'Jaipur' );
+
+
+insert into emp
+values
+(1,       'Alice',     800, 1),
+(2,       'Ben',     900, 1),
+(3,       'Chris',     700, 2),
+(4,       'David',     500, 2),
+(5,       'Elcid',     700, 3);
+
+q) display emp names working in IT dept
+select ename
+from dept d
+join
+emp e
+using(dno)
+where dname like 'IT';
+
+q) display city wise count of emps
+select city,count(*) as 'Number of Emps'
+from dept d
+join
+emp e
+using(dno)
+group by city;

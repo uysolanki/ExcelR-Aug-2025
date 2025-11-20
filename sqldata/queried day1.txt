@@ -211,3 +211,128 @@ join
 emp e
 using(dno)
 group by city;
+
+
+M : M
+
+create table actor(
+ano int(5) primary key,
+aname varchar(10) not null,
+age int(5));
+
+
+create table movie(
+mno int(5) primary key,
+mname varchar(10) not null,
+ryear int(5));
+
+
+create table netflix(
+ano int(5),
+mno int(5),
+fees int(5),
+foreign key(ano) references actor(ano),
+foreign key(mno) references movie(mno));
+
+
+insert into actor
+values
+(1,       'SRK',     60),
+(2,       'AK',      56),
+(3,       'DP',      40 );
+
+
+insert into movie
+values
+(1,       'CE',     2010),
+(2,       'Dunki',  2024),
+(3,       'RR',     2007);
+
+insert into netflix
+values
+(1,       1,  500),
+(1,       2,  1000),
+(3,       1,  300),
+(2,       3,  400);
+
+
+q) display movie names of actor SRK
+
+phase 1 :
+
+SELECT *
+FROM actor a
+JOIN netflix n
+USING ( ano )
+JOIN movie m
+USING ( mno )
+
+phase 2 :  horizontal trimming
+SELECT *
+FROM actor a
+JOIN netflix n
+USING ( ano )
+JOIN movie m
+USING ( mno )
+where aname like 'SRK';
+
+phase 3 :  vertical trimming
+SELECT mname
+FROM actor a
+JOIN netflix n
+USING ( ano )
+JOIN movie m
+USING ( mno )
+where aname like 'SRK';
+
+
+q) display acto wise count of movies
+
+phase 1 :
+
+SELECT *
+FROM actor a
+JOIN netflix n
+USING ( ano )
+JOIN movie m
+USING ( mno )
+
+phase 2 : 
+SELECT aname,count(*) as 'Number of Movies done'
+FROM actor a
+JOIN netflix n
+USING ( ano )
+JOIN movie m
+USING ( mno )
+group by aname;
+
+
+q)  display net worth of all actoes
+SELECT aname,sum(fees) as 'Net worth'
+FROM actor a
+JOIN netflix n
+USING ( ano )
+JOIN movie m
+USING ( mno )
+group by aname;
+
+q) display name of actors who have not done any movie (hint : use left join)
+phase 1 : 
+SELECT * 
+FROM actor a
+LEFT JOIN netflix n
+USING ( ano );
+
+phase 2 :
+SELECT *
+FROM actor a
+LEFT JOIN netflix n
+USING ( ano )
+WHERE fees IS NULL
+
+phase 3:
+SELECT aname
+FROM actor a
+LEFT JOIN netflix n
+USING ( ano )
+WHERE fees IS NULL

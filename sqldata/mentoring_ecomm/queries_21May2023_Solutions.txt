@@ -1,0 +1,246 @@
+q1) Display total number of orders placed by AAKASH
+select count(*)
+from Customer c, Orders o
+where
+c.cus_id= o.cus_id
+and
+cus_name like 'AAKASH';
+
+SELECT COUNT( * ) AS 'Number Of Orders'
+FROM Customer c, Orders o
+WHERE c.cus_id = o.cus_id
+AND cus_name LIKE 'AAKASH'
+
+SELECT COUNT( * ) AS 'Number Of Orders'
+FROM Customer c, Orders o
+WHERE c.cus_id = o.cus_id
+AND cus_name
+IN ('AAKASH')
+
+SELECT COUNT( * ) AS 'Number Of Orders'
+FROM Customer
+join
+Orders
+on
+customer.cus_id=orders.cus_id
+and
+cus_name like 'AAKASH';
+
+
+q2) total count of orders by Akash and Aman Collectively
+SELECT COUNT( * ) AS 'Number Of Orders'
+FROM Customer
+join
+Orders
+on
+customer.cus_id=orders.cus_id
+and
+cus_name in('AAKASH','AMAN');
+
+q) display names of customers staying in either Delhi or Mumbai
+SELECT cus_name
+FROM customer
+WHERE cus_city
+IN (
+'Delhi', 'Mumbai'
+)
+
+q3) q1 using joins
+
+q4) q3 using "using"  NOTE using followed by  ()
+
+q5) Name of supplier and total prices of products delivered 
+by that supplier
+SELECT supp_name, sum(supp_price)
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+group by supplier.supp_id;
+
+q) display total number of products shipped from Delhi
+SELECT supp_city, COUNT( * )
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+where supp_city like 'Delhi'
+GROUP BY supp_city;
+
+
+q6) q5 + have supplied products worth more than 30,000
+SELECT supp_name, SUM( supp_price )
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+GROUP BY supplier.supp_id
+having SUM( supp_price )>30000;
+
+q7) display name and price of products supplied by 'Rajesh Retails;
+SELECT pro_name, supp_price
+FROM Supplier
+JOIN Supplier_pricing
+USING ( supp_id )
+JOIN Product
+USING ( pro_id )
+WHERE supp_name LIKE 'Rajesh Retails'
+
+q8) q7 using joins ( demo of joinging 3 tables)
+
+q9) display name of customers who have placed more than 3 orders
+
+
+a)without join keyword
+
+b)with join+ on keyword
+SELECT cus_name, COUNT( * ) as 'Number of orders'
+FROM customer
+JOIN orders
+on customer.cus_id = orders.cus_id
+GROUP BY cus_name
+having COUNT( * ) >3;
+
+c)with join+using keyword
+SELECT cus_name, COUNT( * ) as 'Number of orders'
+FROM customer
+JOIN orders
+USING ( cus_id )
+GROUP BY cus_name
+having COUNT( * ) >3;
+
+d) nested query 
+SELECT cus_name
+FROM customer
+WHERE cus_id
+IN (
+
+SELECT c.cus_id
+FROM customer c, orders o
+WHERE c.cus_id = o.cus_id
+GROUP BY cus_id
+HAVING COUNT( * ) >3
+)
+LIMIT 0 , 30
+
+
+q10 display name of customers who have not placed any order
+SELECT cus_name
+FROM customer
+LEFT JOIN orders
+USING ( cus_id )
+WHERE ord_id IS NULL
+
+q11 display all the orders along with product name ordered by a customer 'AAKASH'
+SELECT ord_id,pro_name,pro_desc
+FROM customer
+JOIN orders
+USING ( cus_id )
+JOIN supplier_pricing
+USING ( pricing_id )
+JOIN product
+USING ( pro_id )
+WHERE cus_name LIKE 'AAKASH';
+
+q12 Display the Supplier details of who is supplying more than two product
+SELECT supp_name, COUNT( * )
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+JOIN product
+USING ( pro_id )
+GROUP BY supp_name
+having COUNT( * ) > 2;
+
+q13 Display customer name and gender whose names start or end with character 'A'.
+select cus_name
+from customer
+where cus_name like 'A%' or cus_name like '%A';
+
+q14 Display the Id and Name of the Product ordered after “2021-10-05”. 
+SELECT pro_name
+FROM product
+JOIN supplier_pricing
+USING ( pro_id )
+JOIN orders
+USING ( pricing_id )
+WHERE ord_date > "2021-10-05"
+
+q15 Display the total number of customers based on gender who have placed 
+orders of worth at least Rs 3000
+SELECT cus_gender, count(*)
+FROM customer
+JOIN orders
+USING ( cus_id )
+JOIN supplier_pricing
+USING ( pricing_id )
+WHERE supp_price >3000
+group by cus_gender;
+
+
+q16  the least expensive product from each category and print the table 
+with category id, name, and price of the product
+
+SELECT cat_name, pro_name, pro_desc, MIN( supp_price )
+FROM category
+JOIN product
+USING ( cat_id )
+JOIN supplier_pricing
+USING ( pro_id )
+GROUP BY cat_name
+
+q17 Create a stored procedure to display supplier id, name, 
+rating and Type_of_supplier. If rating >4 then “Genuine Supplier” if rating >2 
+“Average Supplier” else “Supplier should not be considered
+
+
+step 1:
+SELECT supp_name, AVG( stars )
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+JOIN orders
+USING ( pricing_id )
+JOIN rating
+USING ( ord_id )
+GROUP BY supp_name
+
+
+step 2:
+SELECT supp_name, AVG( stars ),
+Case
+when AVG( stars )=5 then 'Excellent Service'
+when AVG( stars )>4 then 'Good Service'
+when AVG( stars )>3 then 'Average Service'
+else 'Poor Service'
+end as 'Supplier Category'
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+JOIN orders
+USING ( pricing_id )
+JOIN rating
+USING ( ord_id )
+GROUP BY supp_name
+
+step 3
+DELIMITER &&  
+	CREATE PROCEDURE supplierValue()
+	BEGIN
+	SELECT supp_name, AVG( stars ),
+Case
+when AVG( stars )=5 then 'Excellent Service'
+when AVG( stars )>4 then 'Good Service'
+when AVG( stars )>3 then 'Average Service'
+else 'Poor Service'
+end as 'Supplier Category'
+FROM supplier
+JOIN supplier_pricing
+USING ( supp_id )
+JOIN orders
+USING ( pricing_id )
+JOIN rating
+USING ( ord_id )
+GROUP BY supp_name;
+	END &&  
+	DELIMITER ;
+
+
+call supplierValue()

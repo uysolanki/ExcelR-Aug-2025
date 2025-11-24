@@ -18,6 +18,7 @@ public class DriverApp {
 		System.out.println("Flat 5000 Rs Discount Applied : " +discount);
 		System.out.println("Total Payable : " +(stud2.calculateFees()-discount));
 
+		
 	}
 
 }

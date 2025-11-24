@@ -48,8 +48,6 @@ public abstract class Student implements FeeOperations {
 	
 	public double applyDiscount(double percetageDiscount)
 	{
-		System.out.println("Percentage discount is "+percetageDiscount);
-		System.out.println(percetageDiscount/100);
 		return (calculateFees()*(percetageDiscount/100));
 	}
 	

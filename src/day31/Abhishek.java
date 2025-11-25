@@ -10,5 +10,10 @@ public class Abhishek extends Amitabh
 		System.out.println("Mercedes");
 	}
 	
+	@Override
+	public void home()
+	{
+		System.out.println("New Jalsa");
+	}
 	
 }

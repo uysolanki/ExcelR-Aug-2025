@@ -22,7 +22,7 @@ public class CatchBlockThrowsExceptionUsingFileHandlingExample {
 		readFile();
 	}
 	
-	public static void readFile() throws DataAccessException
+	public static void readFile() throws DataAccessException 
 	{
 		String fileName="myfolder/file11.txt";
 		FileReader fr=null;

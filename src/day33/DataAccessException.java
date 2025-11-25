@@ -1,6 +1,6 @@
 package day33;
 
-public class DataAccessException extends RuntimeException
+public class DataAccessException extends Exception
 {
 public DataAccessException(String errorMessage)
 {

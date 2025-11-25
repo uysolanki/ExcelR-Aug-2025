@@ -1,10 +1,13 @@
 package day31;
 
+import java.io.IOException;
+
 public class Amitabh {
 
 	public String qualification = "MCOM";
 
-	public void home() {
+	public void home() throws IOException
+	{
 		System.out.println("Jalsa");
 	}
 

@@ -6,7 +6,7 @@ public class Amitabh {
 
 	public String qualification = "MCOM";
 
-	public void home() throws IOException
+	public void home() throws IndexOutOfBoundsException
 	{
 		System.out.println("Jalsa");
 	}

@@ -1,5 +1,7 @@
 package day31;
 
+import java.io.FileNotFoundException;
+
 public class Abhishek extends Amitabh
 
 {
@@ -10,10 +12,21 @@ public class Abhishek extends Amitabh
 		System.out.println("Mercedes");
 	}
 	
+//	@Override
+//	public void home()
+//	{
+//		System.out.println("New Jalsa");
+//	}
+	
+//	@Override
+//	public void home() throws FileNotFoundException
+//	{
+//		System.out.println("New Jalsa");
+//	}
+	
 	@Override
-	public void home()
+	public void home() throws RuntimeException
 	{
 		System.out.println("New Jalsa");
 	}
-	
 }
